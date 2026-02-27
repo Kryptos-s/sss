@@ -1,0 +1,14 @@
+{
+  "name": "activator",
+  "version-string": "1.0.0",
+  "dependencies": [
+    "imgui",
+    "glfw3",
+    "glad",
+    "cpr",
+    "openssl",
+    "nlohmann-json",
+    "fmt",
+    "minizip-ng"
+  ]
+}
