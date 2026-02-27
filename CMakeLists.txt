@@ -12,7 +12,7 @@ find_package(cpr CONFIG REQUIRED)
 find_package(OpenSSL REQUIRED)
 find_package(nlohmann_json CONFIG REQUIRED)
 find_package(fmt CONFIG REQUIRED)
-find_package(unofficial-minizip CONFIG REQUIRED)
+find_package(minizip-ng CONFIG REQUIRED)
 
 set(SOURCES
   src/main.cpp
@@ -50,9 +50,9 @@ target_link_libraries(Activator PRIVATE
   OpenSSL::Crypto
   nlohmann_json::nlohmann_json
   fmt::fmt
-  unofficial::minizip::minizip
-  shlwapi
-  crypt32
+  MINIZIP::minizip-ng
+  $<$<PLATFORM_ID:Windows>:shlwapi>
+  $<$<PLATFORM_ID:Windows>:crypt32>
 )
 
 if (WIN32)
